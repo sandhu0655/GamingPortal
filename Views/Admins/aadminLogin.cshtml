@@ -1,0 +1,45 @@
+﻿@model GamingPortal.Models.Admin
+
+@{
+    ViewData["Title"] = "aadminLogin";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKntfqXUTnRjmq-jcSnEtahHpgMvRbFt8BMjCfjSRj0cQKF0TYK_jkrC2PkpmZZ5pQeNk&usqp=CAU" class="img-thumbnail"/>
+        </div>
+
+        <div class="col-md-6">
+            <h1>Admin Login</h1>
+            <form asp-action="aadminLogin">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Sign Up" class="btn btn-primary" />
+                </div>
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
